@@ -7007,32 +7007,32 @@ const elementsSymbolMap = {
     }
 }
 
+export const stringsToElements = (string) => {
+    let results = []
+    const _stringsToElements = (string, appendArray = []) => {
+        if (!appendArray.length) results = []
+        const letters = string.split("");
+        let root = elementsSymbolMap;
 
-let results = []
-export const stringsToElements = (string, appendArray = []) => {
-    if (!appendArray.length) results = []
-    const letters = string.split("");
-    let root = elementsSymbolMap;
-
-    if (!string) {
-        results.push(appendArray);
-        return;
-    }
-
-    for (let i = 0; i < letters.length; i++) {
-        const letter = letters[i];
-        if (root[letter]) {
-            root = root[letter]
-        } else {
-            break;
+        if (!string) {
+            results.push(appendArray);
+            return;
         }
-        if (root.elemets?.length) {
-            root.elemets.forEach(element => {
-                stringsToElements(string.slice(i + 1), [...appendArray, element])
-            });
+
+        for (let i = 0; i < letters.length; i++) {
+            const letter = letters[i];
+            if (root[letter]) {
+                root = root[letter]
+            } else {
+                break;
+            }
+            if (root.elemets?.length) {
+                root.elemets.forEach(element => {
+                    _stringsToElements(string.slice(i + 1), [...appendArray, element])
+                });
+            }
         }
     }
+    _stringsToElements(string)
+    return results;
 }
-
-stringsToElements('amirali')
-console.log(results)
