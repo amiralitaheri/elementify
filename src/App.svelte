@@ -7,13 +7,12 @@
   let answers;
 
   const runTheFunction = debounce((inputValue) => {
-    if (inputValue) answers = stringsToElements(inputValue);
+    if (inputValue) answers = stringsToElements(inputValue.toLowerCase());
   }, 750);
 
   $: {
-    if (inputValue) {
-      runTheFunction(inputValue);
-    } else {
+    runTheFunction(inputValue);
+    if(!inputValue) {
       answers = null;
     }
   }
