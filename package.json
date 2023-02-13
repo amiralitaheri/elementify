@@ -1,7 +1,7 @@
 {
-  "name": "vite-svelte-starter",
-  "private": true,
-  "version": "0.0.0",
+  "name": "elementify",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
     "svelte": "^3.55.0",
     "vite": "^4.0.4"
   },
   "dependencies": {
     "lodash": "^4.17.21"
-  }
+  },
+  "author": "Amirali Taheri <amiralitaheri64@gmail.com> (https://amiralitaheri.ir/)"
 }
