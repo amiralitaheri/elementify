@@ -12,7 +12,7 @@
 
   $: {
     runTheFunction(inputValue);
-    if(!inputValue) {
+    if (!inputValue) {
       answers = null;
     }
   }
@@ -37,7 +37,6 @@
       {/each}
     </div>
   {/if}
-  <div />
 </main>
 
 <style>
@@ -50,5 +49,7 @@
     margin: 16px;
     display: flex;
     gap: 8px;
+    overflow-x: auto;
+    max-width: 100%;
   }
 </style>
