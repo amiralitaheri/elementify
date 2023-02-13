@@ -6,7 +6,8 @@
   const element = periodicTableMap[elementName];
 </script>
 
-<div class="container" style="background: {'#' + element['cpk-hex']};">
+<div class="container">
+  <div class="background" style="background: {'#' + element['cpk-hex']};" />
   <div class="symbol">{element.symbol}</div>
   <div class="number info">{element.number}</div>
   <div class="atomic-mass info">{Math.round(element.atomic_mass)}</div>
@@ -22,7 +23,15 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-      pointer-events: none;
+    pointer-events: none;
+  }
+
+  .background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
   }
 
   .symbol {
