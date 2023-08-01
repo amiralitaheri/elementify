@@ -1,3 +1,6 @@
-# elements
+# Elementify
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/vitejs-vite-thae7m)
+A simple project to answer a simple question.
+
+## Can you write a word with periodic table elements?
+Amir -> Am + Ir
